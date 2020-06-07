@@ -1,12 +1,15 @@
 import React from 'react'
 import './login.css'
 
+import AuthService from '../../services/auth-service/AuthService'
+
 export default class Login extends React.Component{
  constructor() {
   super()
   this.state = {
-   email: '',
-   password:''
+    email: '',
+    password: '',
+    hasError:false
   }
  }
 
@@ -19,21 +22,32 @@ export default class Login extends React.Component{
  }
 
  login = () => {
-  const { email, password } = this.state
+   const { email, password } = this.state
+   const {history} = this.props
   if (!email || !password) {
    console.log('não é possível logar')
    return
   }
 
-  console.log('executa o login')
+   AuthService.basicAuth(email, password)
+     .then((resp) => {
+       console.log(resp)
+       history.push({ pathname: 'tasks' })
+     })
+     .catch(e => {
+       console.log('credenciais inválidas: ', e)
+       this.setState({hasError:true})
 
+   })
  }
 
  render() {
-  const {email, password} = this.state
+  const {email, password, hasError} = this.state
   return(
-   <div className={'login--flex-cloumn login--container'} >
-    <div className={'App-card login--card'}>
+    <div className={'login--flex-cloumn login--container'} >      
+      <div className={'App-card login--card'}>
+        {hasError && <span className={'login--error-text'}>Seu email ou senha está incorreto.</span>}
+        
      <div className={'login--flex-cloumn login--input'}>
       <label htmlFor="email">Email</label>
       <input name="email" placeholder="Email" value={email} onChange={(e) => this.changeInputValue(e)}/>

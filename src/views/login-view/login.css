@@ -27,3 +27,12 @@
   padding: 1%;
   width: 80%; 
 }
+
+.login--error-text{
+  text-align: start;
+  display: inline-block;
+  width: 80%;
+  font-size: 11px;
+  padding: 2%;
+  color: red;
+}

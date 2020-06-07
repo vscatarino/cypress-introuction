@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './views/login-view/Login'
 import TaskList from './views/task-list-view/TaskList'
+import PrivateRoute from './components/PrivateRoute'
 import './App.css'
 
 import {
@@ -14,7 +15,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path={'/'} exact={true} component={Login}/>
-        <Route path={'/tasks'} component={TaskList}/>
+        <PrivateRoute path={'/tasks'} component={TaskList}/>
       </Switch>
     </BrowserRouter>
   );
