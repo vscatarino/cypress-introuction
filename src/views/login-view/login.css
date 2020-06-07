@@ -1,0 +1,29 @@
+.login--flex-cloumn{
+ display:flex;
+ flex-direction:column;
+}
+
+.login--container{
+ justify-content: center; 
+ align-items:center; 
+ height: 100vh;
+}
+
+.login--card{
+  display:flex; 
+  flex-direction:column; 
+  align-items: center;
+  width: 25%; 
+  padding:2%;
+}
+
+.login--input{
+ padding:1%; 
+ width:80%;
+}
+
+.login--button{
+  margin-top:5%;
+  padding: 1%;
+  width: 80%; 
+}
