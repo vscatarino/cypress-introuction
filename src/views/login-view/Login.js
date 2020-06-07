@@ -56,7 +56,7 @@ export default class Login extends React.Component{
       <label htmlFor="password">Password</label>
       <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => this.changeInputValue(e)} />
      </div>
-     <button className={'login--button'} onClick={() => this.login()}>Entar</button>
+     <button className={'login--button'} onClick={() => this.login()}>Entrar</button>
     </div>    
    </div>
   )}
