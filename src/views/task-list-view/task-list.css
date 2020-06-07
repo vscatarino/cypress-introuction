@@ -1,0 +1,33 @@
+ul li{
+ list-style-type:none;
+ margin-bottom: 15%;
+}
+
+ul {
+ padding: 0;
+}
+
+.task-list--conatiner{
+ margin: 1%;
+ padding: 2%;
+ width: 50%;
+}
+
+.task-list--centralize{
+ display: flex;
+ justify-content: center;
+}
+
+.task-list--data-input{
+ display:flex;
+ justify-content:space-between;
+}
+
+.task-list--width-input{
+ width:90%
+}
+
+.task-list--flex-start{
+ display: flex;
+ justify-content: start;
+}
