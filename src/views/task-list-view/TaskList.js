@@ -41,7 +41,7 @@ export default class TaskList extends Component {
       {
        tasks.map((task, index) => {
         return (
-         <li key={`${index}-${task}`}>{task}</li>
+          <li className={'cypress-li'} key={`${index}-${task}`}>{task}</li>
         )
        })
       }
