@@ -29,4 +29,25 @@ describe.only('List test', () => {
 
  })
 
+ it('should add one task', () => {
+
+  cy.get('ul>li').then(list => {
+   cy.wrap(list.length).as('sizeList')
+   const sizeList = list.length
+   cy.get('.task-list--width-input').type('tarefa 3')
+   cy.get('button').click()
+
+   cy.get('ul>li').then(list => {
+    expect(list.length).to.eq(sizeList + 1)
+    cy.get('@sizeList').then(oldSizeList => {
+     expect(list.length).to.eq(oldSizeList + 1)
+    })
+   })
+  })
+
+
+
+
+ })
+
 })

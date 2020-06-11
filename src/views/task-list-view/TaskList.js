@@ -38,7 +38,6 @@ export default class TaskList extends Component {
     </div>
     <div className={'task-list--flex-start'}>    
       <ul>
-          <li className={'cypress-li'} >tarefa 1</li>
       {
        tasks.map((task, index) => {
         return (
