@@ -6,7 +6,8 @@ describe('Teste Login', () => {
  it('should be a successfully login', () => {
   cy.get('input[name=email]').type('vcatarino15@gmail.com')
   cy.get('input[name=password]').type('cypress')
-  cy.contains('Entrar').click().then(() => {
+  cy.contains('Entrar').click()
+   .then(() => {
    cy.url().should('include', '/tasks')
   })
  })
